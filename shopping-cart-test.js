@@ -1,6 +1,6 @@
-let assert = require('assert');
+// let assert = require('assert'); <Mocha>
+let { expect } = require('chai'); // <Chai>
 let ShoppingCart = require('./shopping-cart');
-
 
 describe('The shopping cart', () => {
   describe('subtotal should', () => {
@@ -9,8 +9,9 @@ describe('The shopping cart', () => {
       let shoppingCart = new ShoppingCart();
       // Act
       let subtotal = shoppingCart.subtotal;
-      // Assert
-      assert.equal(subtotal, 0);
+      // Assert - assert.equal(subtotal, 0); <Mocha>
+      expect(subtotal).to.equal(0); // <Chai>
+    
     });
 
     it ('be the sum of the price * quantity for all items', () => {
@@ -32,7 +33,8 @@ describe('The shopping cart', () => {
           price: 50
         }
       ]);
-      assert.equal(shoppingCart.subtotal, 95);
+      // assert.equal(shoppingCart.subtotal, 95); <Mocha>
+      expect(shoppingCart.subtotal).to.equal(95);
     });
   });
 });

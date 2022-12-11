@@ -1,5 +1,16 @@
+// module.exports = class ShoppingCart {
+//   get subtotal(){
+//     return 0;
+//   }
+// };o                                                
+
 module.exports = class ShoppingCart {
-  get subtotal(){
-    return 0;
+  constructor(items = []) {
+    this._items = items;
   }
-};o                                                
+  get subtotal() {
+    return this._items.reduce((accumulatedSubtotal, item) => {
+      return accumulatedSubtotal + item.quantity * item.price;
+    }, 0);
+  }
+};
