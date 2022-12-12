@@ -72,7 +72,7 @@ describe('add method should', () => {
   });
 
   // Test 3
-    it ('return the item that was just stored in the cart', ()  => {
+    it ('return the item that was stored in the cart', ()  => {
       let shoppingCart = new ShoppingCart([
         {
           id: 1,
